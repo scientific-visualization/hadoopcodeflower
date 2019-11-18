@@ -38,10 +38,10 @@ line.link {
     <div class="content">
       <div class="container">
         <h1>CodeFlower Source code visualization Hadoop Release 3.2.1 LOC</h1>
-        <p class="lead">This experiment visualizes source repositories using an interactive tree. 
-          Each disc represents a file, with a radius proportional to the number of lines of code (loc). 
-          All rendering is done client-side, in JavaScript. 
-          Try hovering on nodes to see the loc number, clicking on directory nodes to fold them, 
+        <p class="lead">This experiment visualizes source repositories using an interactive tree.
+          Each disc represents a file, with a radius proportional to the number of lines of code (loc).
+          All rendering is done client-side, in JavaScript.
+          Try hovering on nodes to see the loc number, clicking on directory nodes to fold them,
           dragging nodes to rearrange the layout, and changing project to see different tree structures.
         </p>
         <form class="form-inline">
@@ -49,25 +49,10 @@ line.link {
           <label>Example projects from GitHub:</label>
           <select id="project">
             <option value="data/hadoop_sc_release_3_2_1.json">Hadoop Release 3.2.1</option>
-            <option value="data/sagres.json">sagres-web / sagres </option>
-            <option value="data/SAGRES-WEB-refactoring.json">Sagres Web Refatorado / 1o Rafactoring do Sagres </option> 
           </select>
           </fieldset>
         </form>
         <div id="visualization"></div>
-        <h2>Purpose</h2>
-        <ul class="unstyled">
-          <li>Did you ever dive into an existing project and wish you could have a bird's eye view of the whole code?</li>
-          <li>Did you ever have to refactor a large application and wish you knew where to start?</li>
-          <li>Did you ever look for a visualization that would help you communicate visually with your teammates about a repository?</li>
-        </ul>
-        <p>CodeFlowers tries to answer these needs. Also, it tries to make code look beautiful, but that's another story.</p>
-        <h2>Usage</h2>
-        <p>To create a CodeFlower, include the <code>CodeFlower.js</code> file together with <code>d3.js</code>, just like in this page. Create a new CodeFlower instance using a CSS selector (of the div where the flower should be inserted), and the width and height of the desired visualization. Then, bind JSON data to the flower using <code>CodeFlower.update()</code>, and you're done.</p>
-        <pre>
-var myFlower = new CodeFlower("#visualization", 1920, 1080);
-myflower.update(jsonData);
-        </pre>
         <h2>Input data format</h2>
         <p>The <code>jsonData</code> format taken as input to <code>update()</code> is extremely simple. It's a JavaScript object representing a file tree structure. Each node must have a <code>name</code> (the file or directory name), leaf nodes must have a <code>size</code> (the number of lines of code or the file), and directory nodes must have a <code>children</code> property containing an array of nodes. As an example, here is the input for the currently displayed CodeFlower. You can modify it at will and click the update button to see the effect of your changes on the CodeFlower.</p>
         <form id="jsonInput">
